@@ -5,7 +5,7 @@
     --bg-color: #ffffffef; 
     --white: #FFFFFF;
     --primary-blue: #879BAF; 
-    --primary-blue-hover: #718599; 
+    --primary-blue-hover: #314961; 
     --input-bg: #879BAF; /* Fundo claro para os inputs baseados na cor primária */
     --text-main: #0F172A;
     --text-muted: #64748B;
@@ -149,7 +149,7 @@ body {
     border-radius: 999px; /* Bordas totalmente arredondadas */
     border: 2px solid transparent;
     background-color: var(--input-bg);
-    color: var(--primary-blue);
+    color: var(--white);
     font-size: 0.95rem;
     font-weight: 600;
     font-family: inherit;
