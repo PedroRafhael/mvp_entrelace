@@ -32,10 +32,24 @@
 
         <div class="nav-right">
             <a href="#" class="nav-link active">Mural</a>
-            <a href="#" class="nav-link">Mensagens <span class="notification-badge">2</span></a>
-            <a href="#" class="nav-link">Meu Perfil</a>
+            
             <div class="user-profile">
-                <a href="#" class="nav-link logout">Sair</a>
+                
+                <i class="ph ph-caret-down" style="color: var(--text-muted); font-size: 0.875rem;"></i>
+                
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">
+                        <i class="ph ph-chat-circle"></i> Mensagens 
+                        <span class="notification-badge">2</span>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <i class="ph ph-user"></i> Meu Perfil
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item logout">
+                        <i class="ph ph-sign-out"></i> Sair
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -108,12 +122,12 @@
                     <button class="action-btn"><i class="ph ph-chat-circle"></i> 5 comentários</button>
                 </footer>
             </article>
-        </section>
-        <div class="empty-state">
+            <div class="empty-state">
             <i class="ph ph-folder-open"></i>
             <h2>Nenhuma publicação</h2>
             <p>Ainda não há postagens para esta categoria no momento.</p>
         </div>
+        </section>
     </main>
 
     <footer class="site-footer">
