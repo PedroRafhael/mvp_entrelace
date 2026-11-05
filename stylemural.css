@@ -1,6 +1,6 @@
 
 :root {
-    --bg-color: #F8FAFC;
+    --bg-color: #fffffff1;
     --white: #FFFFFF;
     --primary-blue: #879BAF;
     --primary-blue-hover: #314961;
@@ -9,6 +9,16 @@
     --border-color: #E2E8F0;
     --badge-bg: #F1F5F9;
     --font-family: 'Montserrat', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1A1D20; 
+        --white: #25282C; 
+        --text-main: #FFFFFF;
+        --text-muted: #9BA3AF;
+        --border-color: #333842;
+        --badge-bg: rgba(255, 255, 255, 0.05);
+    }
 }
 
 * {
