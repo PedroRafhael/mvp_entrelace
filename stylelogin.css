@@ -2,11 +2,11 @@
    1. VARIÁVEIS E TEMA AUTOMÁTICO (CONSISTENTE COM O PROJETO)
    ============================================================== */
 :root {
-    --bg-color: #f8fafc;
+    --bg-color: #ffffffef; 
     --white: #FFFFFF;
     --primary-blue: #879BAF; 
     --primary-blue-hover: #718599; 
-    --input-bg: rgba(135, 155, 175, 0.1); /* Fundo claro para os inputs baseados na cor primária */
+    --input-bg: #879BAF; /* Fundo claro para os inputs baseados na cor primária */
     --text-main: #0F172A;
     --text-muted: #64748B;
     --border-color: #E2E8F0;
