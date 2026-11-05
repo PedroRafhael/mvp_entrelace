@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrelace - Mural da Comunidade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container">
+                <div class="logo-icon"><i class="ph-fill ph-circles-three-plus"></i></div>
+                <span class="logo-text">Entrelace</span>
+            </div>
+            <span class="badge-wireframe">Wireframe MVP</span>
+        </div>
+
+        <div class="nav-center">
+            <div class="location-selector">
+                <i class="ph ph-map-pin"></i>
+                <span>Bairro:</span>
+                <select>
+                    <option value="centro-historico">Centro Histórico</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <a href="#" class="nav-link active">Mural</a>
+            <a href="#" class="nav-link">Mensagens <span class="notification-badge">2</span></a>
+            <a href="#" class="nav-link">Meu Perfil</a>
+            <div class="user-profile">
+                <a href="#" class="nav-link logout">Sair</a>
+            </div>
+        </div>
+    </nav>
+
+    
+ <main class="container">
+        
+        <input type="radio" name="mural-filter" id="filter-todos" class="filter-radio" checked>
+        <input type="radio" name="mural-filter" id="filter-seguranca" class="filter-radio">
+        <input type="radio" name="mural-filter" id="filter-ajuda" class="filter-radio">
+        <input type="radio" name="mural-filter" id="filter-eventos" class="filter-radio">
+
+    
+        <header class="mural-header">
+            <div class="mural-title-area">
+                <h1>Mural da Comunidade</h1>
+                <p>Exibindo publicações validadas para <strong>Centro Histórico</strong></p>
+            </div>
+            
+            <div class="mural-actions">
+                <div class="filters">
+                
+                    <label for="filter-todos" class="filter-btn">Todos</label>
+                    <label for="filter-seguranca" class="filter-btn">Segurança</label>
+                    <label for="filter-ajuda" class="filter-btn">Ajuda Mútua</label>
+                    <label for="filter-eventos" class="filter-btn">Eventos</label>
+                </div>
+                <button class="btn-primary">
+                    <i class="ph ph-plus"></i> Nova Publicação
+                </button>
+            </div>
+        </header>
+
+        <section class="feed">
+            <article class="post-card cat-seguranca">
+                <header class="post-header">
+                    <div class="post-author-info">
+                        <div class="avatar-placeholder">G</div>
+                        <div>
+                            <h2 class="author-name">Gabriel Santos</h2>
+                            <span class="post-time">há 15 min</span>
+                        </div>
+                    </div>
+                    <span class="tag tag-seguranca">Segurança</span>
+                </header>
+                <div class="post-content">
+                    <p>Atenção moradores da Rua das Flores: iluminação do poste da esquina está apagada.</p>
+                </div>
+                <footer class="post-footer">
+                    <button class="action-btn"><i class="ph ph-thumbs-up"></i> 4</button>
+                    <button class="action-btn"><i class="ph ph-chat-circle"></i> 2 comentários</button>
+                </footer>
+            </article>
+            <article class="post-card cat-ajuda">
+                <header class="post-header">
+                    <div class="post-author-info">
+                        <div class="avatar-placeholder">L</div>
+                        <div>
+                            <h2 class="author-name">Lara Oliveira</h2>
+                            <span class="post-time">há 2 horas</span>
+                        </div>
+                    </div>
+                    <span class="tag tag-ajuda">Ajuda Mútua</span>
+                </header>
+                <div class="post-content">
+                    <p>Alguém tem uma escada dobrável para emprestar nesta tarde?</p>
+                </div>
+                <footer class="post-footer">
+                    <button class="action-btn"><i class="ph ph-thumbs-up"></i> 2</button>
+                    <button class="action-btn"><i class="ph ph-chat-circle"></i> 5 comentários</button>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Entrelace - Protótipo Acadêmico de Front-End (Sem Back-end)</p>
+    </footer>
+</body>
+</html>
