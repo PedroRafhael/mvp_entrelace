@@ -381,3 +381,33 @@ body {
 #filter-eventos:checked ~ .feed .post-card:not(.cat-eventos) {
     display: none;
 }
+
+.empty-state {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: var(--white);
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    color: #CBD5E1;
+}
+
+.empty-state h2 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+#filter-seguranca:checked ~ .feed:not(:has(.cat-seguranca)) .empty-state,
+#filter-ajuda:checked ~ .feed:not(:has(.cat-ajuda)) .empty-state,
+#filter-eventos:checked ~ .feed:not(:has(.cat-eventos)) .empty-state {
+    display: flex;
+}
