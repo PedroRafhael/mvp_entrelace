@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import usePage from '../hooks/usePage.js'
 import Navbar from '../components/Navbar.jsx'
+import { loadLikes, saveLikes } from '../lib/likesStorage.js'
 import muralCss from '../styles/mural.css?inline'
 import navbarCss from '../styles/navbar.css?inline'
 
@@ -51,7 +52,17 @@ export default function Mural() {
   const [modalAberto, setModalAberto] = useState(false)
   const [texto, setTexto] = useState('')
   const [categoria, setCategoria] = useState('geral')
+  const [curtidos, setCurtidos] = useState(loadLikes)
   const campoRef = useRef(null)
+
+  // Cada publicação pode ter no máximo 1 curtida do usuário: clicar de novo desfaz.
+  function alternarCurtida(id) {
+    setCurtidos((atual) => (atual.includes(id) ? atual.filter((x) => x !== id) : [...atual, id]))
+  }
+
+  useEffect(() => {
+    saveLikes(curtidos)
+  }, [curtidos])
 
   function abrirModal() {
     setTexto('')
@@ -141,7 +152,14 @@ export default function Mural() {
                 <p>{p.texto}</p>
               </div>
               <footer className="post-footer">
-                <button className="action-btn"><i className="ph ph-thumbs-up"></i> {p.curtidas}</button>
+                <button
+                  className={'action-btn' + (curtidos.includes(p.id) ? ' liked' : '')}
+                  aria-pressed={curtidos.includes(p.id)}
+                  onClick={() => alternarCurtida(p.id)}
+                >
+                  <i className={curtidos.includes(p.id) ? 'ph-fill ph-thumbs-up' : 'ph ph-thumbs-up'}></i>{' '}
+                  {p.curtidas + (curtidos.includes(p.id) ? 1 : 0)}
+                </button>
                 <button className="action-btn"><i className="ph ph-chat-circle"></i> {p.comentarios}</button>
               </footer>
             </article>

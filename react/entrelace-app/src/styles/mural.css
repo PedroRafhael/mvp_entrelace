@@ -461,3 +461,9 @@ body {
 .btn-primary:disabled:hover {
     background-color: var(--primary-blue);
 }
+
+/* Botão de curtir ativo (o usuário já curtiu) */
+.action-btn.liked,
+.action-btn.liked:hover {
+    color: var(--primary-blue);
+}

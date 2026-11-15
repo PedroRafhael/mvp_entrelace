@@ -31,6 +31,7 @@ src/
 ├── styles/     # CSS de cada página; navbar.css é a navbar compartilhada
 ├── hooks/usePage.js     # injeta o CSS da página ao entrar na rota e remove ao sair
 ├── lib/chatStorage.js   # localStorage das conversas (mesmas chaves do chat.html)
+├── lib/likesStorage.js  # localStorage das curtidas (1 por publicação)
 ├── App.jsx     # rotas
 └── main.jsx
 ```
