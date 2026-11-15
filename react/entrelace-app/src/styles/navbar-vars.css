@@ -1,0 +1,11 @@
+/* Variáveis da navbar para páginas que não as definem (Perfil e Chat) */
+:root {
+    --white: #FFFFFF;
+    --primary-blue: #879BAF;
+    --primary-blue-hover: #314961;
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    --badge-bg: #F1F5F9;
+    --font-family: 'Montserrat', sans-serif;
+}

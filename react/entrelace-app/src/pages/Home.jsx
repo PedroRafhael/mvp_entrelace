@@ -20,7 +20,7 @@ export default function Home() {
 
         <div className="nav-right">
           <Link to="/login" className="nav-link">Entrar</Link>
-          <button className="btn-primary" onClick={() => navigate('/login')}>Criar Conta</button>
+          <button className="btn-primary" onClick={() => navigate('/validacao')}>Criar Conta</button>
         </div>
       </nav>
 
@@ -65,7 +65,7 @@ export default function Home() {
           <p className="hero-subtitle">
             Um espaço seguro e exclusivo para compartilhar avisos, resolver problemas locais e conversar com seus vizinhos mantendo sua privacidade.
           </p>
-          <Link to="/login" className="btn-primary btn-large">
+          <Link to="/validacao" className="btn-primary btn-large">
             <button className="btn-primary btn-large">
               Começar Agora <i className="ph ph-arrow-right"></i>
             </button>

@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import usePage from '../hooks/usePage.js'
 import { iniciarConversa } from '../lib/chatStorage.js'
-import css from '../styles/perfil.css?inline'
+import Navbar from '../components/Navbar.jsx'
+import navbarCss from '../styles/navbar.css?inline'
+import navbarVarsCss from '../styles/navbar-vars.css?inline'
+import perfilCss from '../styles/perfil.css?inline'
 
-const FOTO_USUARIO =
-  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces'
+const css = perfilCss + navbarVarsCss + navbarCss
+
 const FOTO_PERFIL =
   'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=faces'
 
@@ -61,35 +64,7 @@ export default function Perfil() {
 
   return (
     <>
-      <header className="topbar">
-        <div className="brand">
-          <div className="brand-mark" aria-hidden="true">⌘</div>
-          <span className="brand-name">Entrelace</span>
-          <span className="tag">Wireframe MVP</span>
-        </div>
-        <button
-          className="neighborhood"
-          type="button"
-          onClick={() => mostrarToast('Seletor de bairros: conecte aqui os bairros cadastrados.')}
-        >
-          <span className="pin">⌖</span> Bairro: <strong>Centro Histórico</strong>⌄
-        </button>
-        <nav className="nav" aria-label="Navegação principal">
-          <Link to="/mural">Mural</Link>
-          <Link to="/chat">Mensagens<span className="count">2</span></Link>
-          <button
-            className="profile-link"
-            type="button"
-            onClick={() => mostrarToast('Você já está visualizando um perfil de morador.')}
-          >
-            Meu Perfil
-          </button>
-        </nav>
-        <div className="user-mini">
-          <img src={FOTO_USUARIO} alt="Foto do usuário" />
-          <button className="logout" type="button" onClick={() => navigate('/')}>Sair</button>
-        </div>
-      </header>
+      <Navbar />
 
       <main>
         <section className="profile-card" aria-label="Perfil de morador">

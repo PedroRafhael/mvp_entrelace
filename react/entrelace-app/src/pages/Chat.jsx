@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import usePage from '../hooks/usePage.js'
 import { horaAtual, loadActive, loadChats, saveActive, saveChats } from '../lib/chatStorage.js'
-import css from '../styles/chat.css?inline'
+import Navbar from '../components/Navbar.jsx'
+import chatCss from '../styles/chat.css?inline'
+import navbarCss from '../styles/navbar.css?inline'
+import navbarVarsCss from '../styles/navbar-vars.css?inline'
+
+const css = chatCss + navbarVarsCss + navbarCss
 
 export default function Chat() {
   usePage({ css, title: 'Entrelace - Conversas' })
@@ -50,10 +54,7 @@ export default function Chat() {
 
   return (
     <>
-      <header className="top">
-        <div className="logo"><i className="ph-fill ph-circles-three-plus"></i>Entrelace</div>
-        <Link className="back" to="/mural">← Voltar à comunidade</Link>
-      </header>
+      <Navbar />
 
       <main className="layout">
         <aside className={'sidebar' + (mostrarLista ? ' show' : '')} id="sidebar">
