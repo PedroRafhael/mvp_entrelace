@@ -18,7 +18,7 @@ npm run dev
 | `/`       | `index.html`      | `/validacao` (Criar Conta, Começar Agora), `/login` (Entrar) |
 | `/validacao` | `validacao.html` | `/login` (enviar para análise e Entrar), `/` (logo)     |
 | `/login`  | `login.html`      | `/mural` (entrar e botões sociais), `/` (logo)             |
-| `/mural`  | `mural.html`      | `/chat` (Mensagens), `/perfil` (Meu Perfil), `/` (Sair)    |
+| `/mural`  | `mural.html`      | `/chat` (Mensagens), `/perfil` (Meu Perfil), `/` (Sair); "Nova Publicação" abre o modal de post |
 | `/perfil` | `perfil.html`     | menu (Mural, Mensagens, Meu Perfil, Sair)                  |
 | `/chat`   | `chat.html`       | menu (Mural, Mensagens, Meu Perfil, Sair)                  |
 

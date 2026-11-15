@@ -322,3 +322,142 @@ body {
         color: #E2E8F0;
     }
 }
+
+/* ==============================================================
+   Modal "Nova Publicação"
+   ============================================================== */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(15, 23, 42, 0.5);
+}
+
+.modal-backdrop.open {
+    display: flex;
+}
+
+.modal {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 520px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+    color-scheme: light dark;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.modal-close {
+    display: flex;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--text-main);
+}
+
+.modal-field {
+    margin-bottom: 1.25rem;
+}
+
+.modal-field label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.modal-field textarea,
+.modal-field select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.modal-field textarea {
+    min-height: 130px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.modal-field textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.modal-field textarea:focus,
+.modal-field select:focus {
+    border-color: var(--primary-blue);
+}
+
+.modal-field select {
+    cursor: pointer;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    padding: 0.6rem 0.75rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-text:hover {
+    color: var(--text-main);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary:disabled:hover {
+    background-color: var(--primary-blue);
+}
