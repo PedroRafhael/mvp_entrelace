@@ -1,0 +1,151 @@
+:root {
+      --azul: #354de3;
+      --azul-escuro: #172b50;
+      --texto: #14233e;
+      --suave: #7184a5;
+      --borda: #dce4f0;
+      --fundo: #f6f8fc;
+      --verde: #13b981;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+    button { font: inherit; cursor: pointer; }
+    .topbar {
+      height: 66px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding: 0 21px;
+      background: #fff;
+      border-bottom: 1px solid var(--borda);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    .brand { display:flex; align-items:center; gap:12px; white-space:nowrap; }
+    .brand-mark {
+      width: 36px; height: 44px; border-radius: 13px;
+      background: var(--azul); color:white; display:grid; place-items:center;
+      font-size: 21px; font-weight: 700;
+    }
+    .brand-name { font-size: 20px; font-weight: 750; letter-spacing:-.5px; }
+    .tag {
+      color:#526887; background:#f4f7fc; border:1px solid var(--borda);
+      border-radius:20px; padding:5px 10px; font-size:11px;
+    }
+    .neighborhood {
+      border:1px solid var(--borda); background:#f9fbff; border-radius:13px;
+      padding:9px 14px; color:#536987; display:flex; align-items:center; gap:9px;
+      min-width:234px;
+    }
+    .pin { color:var(--azul); font-size:17px; }
+    .neighborhood strong { color:#243956; }
+    .nav { margin-left:auto; display:flex; align-items:center; gap:27px; }
+    .nav a { text-decoration:none; color:#14233e; font-weight:650; }
+    .nav a:hover { color:var(--azul); }
+    .count {
+      display:inline-grid; place-items:center; width:19px; height:19px;
+      margin-left:4px; border-radius:50%; background:var(--azul); color:#fff;
+      font-size:11px;
+    }
+    .profile-link {
+      border:2px solid #111; background:#fff; border-radius:10px;
+      padding:9px 13px; color:#14233e; font-weight:650;
+    }
+    .user-mini { display:flex; align-items:center; gap:12px; padding-left:16px; border-left:1px solid var(--borda); }
+    .user-mini img { width:34px; height:34px; object-fit:cover; border-radius:50%; }
+    .logout { border:0; background:none; color:#8392ad; }
+    main { width:min(672px, calc(100% - 32px)); margin:32px auto 70px; }
+    .profile-card {
+      background:#fff; border:1px solid var(--borda); border-radius:16px;
+      overflow:hidden; box-shadow:0 2px 3px rgba(20,42,75,.04);
+    }
+    .cover { height:112px; background:var(--azul); }
+    .profile-content { padding:0 24px 24px; position:relative; }
+    .avatar {
+      width:96px; height:96px; border-radius:50%; object-fit:cover;
+      border:4px solid white; position:absolute; top:-48px; left:24px;
+      background:#dce4ff; box-shadow:0 1px 3px #00000012;
+    }
+    .action-row { display:flex; justify-content:flex-end; padding-top:4px; min-height:66px; }
+    .primary {
+      border:0; border-radius:12px; background:var(--azul); color:white;
+      font-weight:700; padding:13px 20px; display:flex; align-items:center; gap:9px;
+      transition:background .2s, transform .2s;
+    }
+    .primary:hover { background:#263cc9; transform:translateY(-1px); }
+    .person-line { display:flex; align-items:center; flex-wrap:wrap; gap:9px; margin-top:0; }
+    h1 { font-size:20px; margin:0; color:#101c31; }
+    .verified {
+      color:#07976a; background:#edfff8; border:1px solid #a8efd5;
+      border-radius:20px; padding:4px 9px; font-size:10px; font-weight:700;
+    }
+    .location { color:var(--suave); margin-top:7px; font-size:13px; }
+    .location span { color:#526f9b; margin-right:5px; }
+    .privacy {
+      margin-top:17px; border:1px solid var(--borda); background:#f8faff;
+      border-radius:12px; min-height:43px; padding:11px 13px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      color:#526987; font-size:12px;
+    }
+    .privacy strong { color:var(--azul); margin-right:7px; }
+    .hidden { color:#7e8eaa; }
+    .section-title { font-size:14px; font-weight:750; margin:25px 0 13px; }
+    .post {
+      background:white; border:1px solid var(--borda); border-radius:13px;
+      padding:18px 16px; margin-bottom:12px;
+    }
+    .post p { margin:0; font-size:14px; color:#14233e; }
+    .post small { display:block; margin-top:12px; color:#8092b2; font-size:11px; }
+    .modal-backdrop {
+      position:fixed; inset:0; background:#0d1b35a6; display:none;
+      align-items:center; justify-content:center; padding:18px; z-index:10;
+    }
+    .modal-backdrop.open { display:flex; }
+    .modal {
+      width:min(420px,100%); background:#fff; border-radius:17px; padding:24px;
+      box-shadow:0 20px 70px #07142c55;
+    }
+    .modal h2 { margin:0 0 8px; font-size:19px; }
+    .modal p { color:#6e809e; line-height:1.5; margin:0 0 18px; }
+    .modal textarea {
+      width:100%; min-height:105px; resize:vertical; padding:12px;
+      border:1px solid var(--borda); border-radius:10px; font:inherit;
+      outline-color:var(--azul);
+    }
+    .modal-actions { display:flex; justify-content:flex-end; gap:9px; margin-top:16px; }
+    .secondary { background:white; border:1px solid var(--borda); border-radius:10px; padding:10px 14px; color:#536987; }
+    .toast {
+      position:fixed; bottom:22px; left:50%; transform:translateX(-50%);
+      background:#172b50; color:#fff; border-radius:10px; padding:12px 17px;
+      box-shadow:0 8px 30px #07142c33; display:none; z-index:20;
+    }
+    .toast.show { display:block; }
+    @media (max-width:760px) {
+      .topbar { gap:12px; padding:0 14px; }
+      .tag, .neighborhood, .user-mini, .nav a:first-child { display:none; }
+      .nav { gap:13px; }
+      .nav a { font-size:12px; }
+      .profile-link { padding:8px 9px; }
+      .brand-name { font-size:18px; }
+      main { margin-top:20px; }
+    }
+    @media (max-width:430px) {
+      .topbar { height:60px; }
+      .nav { margin-left:auto; }
+      .nav a:nth-child(2) { display:none; }
+      .profile-link { font-size:12px; }
+      .cover { height:100px; }
+      .profile-content { padding:0 17px 19px; }
+      .avatar { left:17px; width:86px; height:86px; top:-43px; }
+      .action-row { min-height:62px; }
+      .primary { padding:11px 13px; font-size:12px; }
+      h1 { font-size:18px; }
+      .privacy { align-items:flex-start; flex-direction:column; gap:6px; }
+    }

@@ -1,16 +1,36 @@
-# React + Vite
+# Entrelace (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Versão em React do protótipo HTML/CSS do Entrelace, com o mesmo design e as páginas conectadas por rotas.
 
-Currently, two official plugins are available:
+## Como rodar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Rotas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Rota      | Página (original) | Navega para                                                |
+| --------- | ----------------- | ---------------------------------------------------------- |
+| `/`       | `index.html`      | `/login` (Entrar, Criar Conta, Começar Agora)              |
+| `/login`  | `login.html`      | `/mural` (entrar e botões sociais), `/` (logo)             |
+| `/mural`  | `mural.html`      | `/chat` (Mensagens), `/perfil` (Meu Perfil), `/` (Sair)    |
+| `/perfil` | `perfil.html`     | `/mural`, `/chat`, `/` (Sair); "Iniciar Conversa" → `/chat` |
+| `/chat`   | `chat.html`       | `/mural` (Voltar à comunidade)                             |
 
-## Expanding the ESLint configuration
+## Estrutura
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── pages/      # Home, Login, Mural, Perfil, Chat (HTML original convertido para JSX)
+├── styles/     # CSS original de cada página, sem alterações
+├── hooks/usePage.js     # injeta o CSS da página ao entrar na rota e remove ao sair
+├── lib/chatStorage.js   # localStorage das conversas (mesmas chaves do chat.html)
+├── App.jsx     # rotas
+└── main.jsx
+```
+
+Cada página tinha seu próprio CSS (com `body`, `.navbar`, `.btn-primary`... diferentes),
+por isso o hook `usePage` carrega só o CSS da página atual, evitando conflitos e
+preservando o visual idêntico ao original.

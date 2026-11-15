@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrelace - Validação de Residência</title>
+    <link rel="stylesheet" href="stylevalidacao.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Barra de Navegação Superior -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-container">
+                <div class="logo-icon"><i class="ph-fill ph-circles-three-plus"></i></div>
+                <span class="logo-text">Entrelace</span>
+            </div>
+            <span class="badge-wireframe">Wireframe MVP</span>
+        </div>
+
+        <div class="nav-right">
+            <a href="#" class="nav-link">Entrar</a>
+            <button class="btn-primary">Criar Conta</button>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="validation-container">
+        <section class="validation-card">
+            
+            <!-- Cabeçalho do Card -->
+            <header class="card-header">
+                <div class="header-icon">
+                    <i class="ph ph-identification-card"></i>
+                </div>
+                <h1>Validação de Residência</h1>
+                <p>Informe seu CEP e envie um comprovante para liberar o acesso ao mural da sua região.</p>
+            </header>
+
+            <!-- Formulário de Validação -->
+            <form class="validation-form" action="#" method="POST">
+                
+                <!-- Campo CEP -->
+                <div class="form-group">
+                    <label for="cep">CEP DE RESIDÊNCIA</label>
+                    <input type="text" id="cep" placeholder="90000-000" maxlength="9" required>
+                </div>
+
+                <!-- Campo Upload de Arquivo -->
+                <div class="form-group">
+                    <label for="comprovante">COMPROVANTE DE RESIDÊNCIA (CONTA DE LUZ/ÁGUA)</label>
+                    <label for="comprovante" class="upload-area">
+                        <i class="ph ph-upload-simple"></i>
+                        <span class="upload-title">Clique para selecionar o arquivo</span>
+                        <span class="upload-subtitle">PDF, PNG ou JPG até 5MB</span>
+                        <input type="file" id="comprovante" accept=".pdf,.png,.jpg,.jpeg" required>
+                    </label>
+                </div>
+
+                <!-- Aviso de Segurança (Usando o tom dourado/âmbar da paleta) -->
+                <div class="security-notice">
+                    <i class="ph ph-lock-simple"></i>
+                    <p><strong>Documento Seguro:</strong> Seu comprovante é 100% privado e visualizado apenas pela moderação para confirmação do CEP.</p>
+                </div>
+
+                <!-- Botão de Envio -->
+                <button type="submit" class="btn-primary btn-block">
+                    Enviar para Análise <i class="ph ph-check-circle"></i>
+                </button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Entrelace - Protótipo Acadêmico de Front-End (Sem Back-end)</p>
+    </footer>
+</body>
+</html>
