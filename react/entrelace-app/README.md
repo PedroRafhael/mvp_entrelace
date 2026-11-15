@@ -19,7 +19,7 @@ npm run dev
 | `/validacao` | `validacao.html` | `/login` (enviar para análise e Entrar), `/` (logo)     |
 | `/login`  | `login.html`      | `/mural` (entrar e botões sociais), `/` (logo)             |
 | `/mural`  | `mural.html`      | `/chat` (Mensagens), `/perfil` (Meu Perfil), `/` (Sair)    |
-| `/perfil` | `perfil.html`     | menu (Mural, Mensagens, Meu Perfil, Sair); "Iniciar Conversa" → `/chat` |
+| `/perfil` | `perfil.html`     | menu (Mural, Mensagens, Meu Perfil, Sair)                  |
 | `/chat`   | `chat.html`       | menu (Mural, Mensagens, Meu Perfil, Sair)                  |
 
 ## Estrutura
@@ -38,3 +38,6 @@ src/
 Cada página tinha seu próprio CSS (com `body`, `.navbar`, `.btn-primary`... diferentes),
 por isso o hook `usePage` carrega só o CSS da página atual, evitando conflitos e
 preservando o visual idêntico ao original.
+
+Todas as páginas respeitam o tema claro/escuro do sistema (`prefers-color-scheme`),
+com a mesma paleta escura.

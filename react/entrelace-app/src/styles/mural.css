@@ -308,3 +308,17 @@ body {
 #filter-eventos:checked ~ .feed:not(:has(.cat-eventos)) .empty-state {
     display: flex;
 }
+/* Correções de contraste no modo escuro (cores que estavam fixas no tema claro) */
+@media (prefers-color-scheme: dark) {
+    .filter-btn:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .avatar-placeholder {
+        background-color: rgba(135, 155, 175, 0.2);
+    }
+
+    .post-content {
+        color: #E2E8F0;
+    }
+}

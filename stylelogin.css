@@ -17,7 +17,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #1A1D20; 
-        --white: #25282C; 
+        --white: #dee3e9; 
         --input-bg: rgba(135, 155, 175, 0.15);
         --text-main: #FFFFFF;
         --text-muted: #9BA3AF;

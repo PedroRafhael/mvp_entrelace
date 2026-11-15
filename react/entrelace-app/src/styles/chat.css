@@ -37,3 +37,16 @@ h1{font-size:21px;margin:0 0 14px}
 .chat.hide{display:none}
 .mobile-back{display:inline-block;border:0;background:none;color:var(--primary);font-size:20px;margin-right:5px}
 }
+
+/* Modo escuro (mesma paleta das demais páginas) */
+@media (prefers-color-scheme: dark) {
+:root{--text:#fff;--muted:#9ba3af;--border:#333842;--bg:#1a1d20}
+.layout{background:#25282c}
+.person{border-bottom-color:#333842}
+.person.active,.person:hover{background:rgba(255,255,255,.05)}
+.avatar{background:rgba(53,77,227,.25);color:#a5b4fc}
+.messages{background:#1f2226}
+.bubble{background:#333842;color:#e2e8f0}
+.search,.composer input{background:#1a1d20;color:var(--text)}
+.empty i{color:#4b5563}
+}

@@ -1,7 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import usePage from '../hooks/usePage.js'
-import { iniciarConversa } from '../lib/chatStorage.js'
 import Navbar from '../components/Navbar.jsx'
 import navbarCss from '../styles/navbar.css?inline'
 import navbarVarsCss from '../styles/navbar-vars.css?inline'
@@ -14,53 +11,6 @@ const FOTO_PERFIL =
 
 export default function Perfil() {
   usePage({ css, title: 'Entrelace | Perfil do morador' })
-  const navigate = useNavigate()
-
-  const [modalAberto, setModalAberto] = useState(false)
-  const [mensagem, setMensagem] = useState('')
-  const [toast, setToast] = useState({ texto: '', visivel: false })
-  const campoRef = useRef(null)
-  const timerRef = useRef(null)
-
-  function mostrarToast(texto) {
-    clearTimeout(timerRef.current)
-    setToast({ texto, visivel: true })
-    timerRef.current = setTimeout(() => setToast((t) => ({ ...t, visivel: false })), 2800)
-  }
-
-  function fecharModal() {
-    setModalAberto(false)
-    setMensagem('')
-  }
-
-  function enviar() {
-    const texto = mensagem.trim()
-    if (!texto) {
-      campoRef.current?.focus()
-      mostrarToast('Digite uma mensagem antes de enviar.')
-      return
-    }
-    iniciarConversa('Mariana Silva', texto)
-    navigate('/chat')
-  }
-
-  useEffect(() => {
-    if (modalAberto) campoRef.current?.focus()
-  }, [modalAberto])
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === 'Escape') {
-        setModalAberto(false)
-        setMensagem('')
-      }
-    }
-    document.addEventListener('keydown', onKey)
-    return () => {
-      document.removeEventListener('keydown', onKey)
-      clearTimeout(timerRef.current)
-    }
-  }, [])
 
   return (
     <>
@@ -71,11 +21,8 @@ export default function Perfil() {
           <div className="cover"></div>
           <div className="profile-content">
             <img className="avatar" src={FOTO_PERFIL} alt="Foto de Mariana Silva" />
-            <div className="action-row">
-              <button className="primary" type="button" onClick={() => setModalAberto(true)}>
-                <span>▤</span> Iniciar Conversa Privada
-              </button>
-            </div>
+            {/* Espaço reservado para a foto sobrepor a capa */}
+            <div className="action-row"></div>
             <div className="person-line">
               <h1>Mariana Silva</h1>
               <span className="verified">Morador Validado</span>
@@ -96,33 +43,6 @@ export default function Perfil() {
           </article>
         </section>
       </main>
-
-      <div
-        className={'modal-backdrop' + (modalAberto ? ' open' : '')}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modalTitle"
-        onClick={(e) => {
-          if (e.target === e.currentTarget) fecharModal()
-        }}
-      >
-        <div className="modal">
-          <h2 id="modalTitle">Conversa privada</h2>
-          <p>Envie uma mensagem para Mariana. Seu número de telefone continuará protegido pelo Entrelace.</p>
-          <textarea
-            ref={campoRef}
-            value={mensagem}
-            onChange={(e) => setMensagem(e.target.value)}
-            placeholder="Escreva sua mensagem..."
-            aria-label="Sua mensagem"
-          />
-          <div className="modal-actions">
-            <button className="secondary" type="button" onClick={fecharModal}>Cancelar</button>
-            <button className="primary" type="button" onClick={enviar}>Enviar mensagem</button>
-          </div>
-        </div>
-      </div>
-      <div className={'toast' + (toast.visivel ? ' show' : '')} role="status">{toast.texto}</div>
     </>
   )
 }
