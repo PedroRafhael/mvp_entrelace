@@ -309,3 +309,19 @@ body {
         flex-direction: column;
     }
 }
+/* Modo escuro: --white vira a cor de superfície (escura), então o texto digitado
+   precisa usar a cor de texto principal para continuar legível. */
+@media (prefers-color-scheme: dark) {
+    .form-group input {
+        color: var(--text-main);
+        caret-color: var(--text-main);
+    }
+
+    /* Preenchimento automático do navegador (e-mail/senha salvos) */
+    .form-group input:-webkit-autofill,
+    .form-group input:-webkit-autofill:focus {
+        -webkit-text-fill-color: var(--text-main);
+        box-shadow: 0 0 0 1000px #2E343B inset;
+        caret-color: var(--text-main);
+    }
+}
